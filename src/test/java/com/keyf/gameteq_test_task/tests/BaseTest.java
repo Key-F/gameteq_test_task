@@ -1,14 +1,14 @@
 package com.keyf.gameteq_test_task.tests;
 
-import com.keyf.gameteq_test_task.pages.MainPage;
+import com.keyf.gameteq_test_task.extensions.MyExtension;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
-
+@ExtendWith(MyExtension.class)
 public class BaseTest {
 
     private static WebDriver driver;
@@ -17,7 +17,7 @@ public class BaseTest {
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("http://test-task.gameteq.com/");
+        driver.get("https://test-task.gameteq.com/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
     }
 

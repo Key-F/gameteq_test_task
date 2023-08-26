@@ -21,7 +21,9 @@ public class DashboardPage {
     public int getCount(Entity entity) {
         String entityName = entity.getDashboardLabel();
         MyWait.myWait(5).invisible(progressSpinner);
-        String countText = driver.findElement(By.xpath("//mat-card-title[text()='" + entityName + "']/following-sibling::node()")).getText();
+        String countText = driver.findElement(By
+                .xpath("//mat-card-title[text()='" + entityName + "']/following-sibling::node()"))
+                .getText();
         String numberOnly = countText.replaceAll("[^0-9]", "");
         LOG.info("Entity count for: " + entityName + " is: " + numberOnly);
         return Integer.parseInt(numberOnly);

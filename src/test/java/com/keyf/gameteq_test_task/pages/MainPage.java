@@ -11,7 +11,6 @@ import static com.keyf.gameteq_test_task.wait.MyWait.myWait;
 
 public class MainPage {
 
-
     private final AllureLogger LOG = new AllureLogger(LoggerFactory.getLogger(MainPage.class));
     @FindBy(css = ".mat-slide-toggle-content")
     private WebElement toggleMenu;
@@ -27,7 +26,6 @@ public class MainPage {
 
     @FindBy(css = "mat-spinner[role='progressbar']")
     private WebElement progressSpinner;
-
 
     public void menuClick() {
         toggleMenu.click();

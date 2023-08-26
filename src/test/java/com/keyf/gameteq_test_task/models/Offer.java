@@ -4,18 +4,8 @@ import com.keyf.gameteq_test_task.utils.NameGenerator;
 
 public class Offer {
 
-    String id;
     String name;
-
     String key;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -37,5 +27,4 @@ public class Offer {
         this.name = NameGenerator.generateEntityName("Offer");
         this.key = "DEFAULT_KEY";
     }
-
 }

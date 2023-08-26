@@ -20,30 +20,18 @@ public class AddPage {
 
     private final AllureLogger LOG = new AllureLogger(LoggerFactory.getLogger(AddPage.class));
 
-    private WebDriver driver;
+    private final WebDriver driver;
     @FindBy(css = "input[name='name']")
     private WebElement nameField;
 
     @FindBy(css = "input[name='key']")
     private WebElement keyField;
 
-    @FindBy(css = "select[name='category']")
-    private WebElement categoryField;
-
     @FindBy(css = "mat-select[name='networks']")
     private WebElement networksField;
 
     @FindBy(css = "mat-select[name='group']")
     private WebElement groupField;
-
-    @FindBy(xpath = "//div[div[*[@name='category']]]//button")
-    private WebElement addCategoryButton;
-
-    @FindBy(xpath = "//div[div[*[@name='networks']]]//button")
-    private WebElement addNetworkButton;
-
-    @FindBy(xpath = "//div[div[*[@name='group']]]//button")
-    private WebElement addGroupButton;
 
     @FindBy(css = ".cdk-overlay-pane input[id^='mat-input']")
     private WebElement newEntityName;
@@ -62,10 +50,6 @@ public class AddPage {
 
     @FindBy(css = "[class = 'mat-option ng-star-inserted'][role ='option']")
     private List<WebElement> groupOptions;
-
-    public Offer getOffer() {
-        return offer;
-    }
 
     public void setOffer(Offer offer) {
         this.offer = offer;

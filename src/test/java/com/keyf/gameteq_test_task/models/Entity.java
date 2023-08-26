@@ -1,6 +1,7 @@
 package com.keyf.gameteq_test_task.models;
 
 public enum Entity {
+
     CATEGORY("categories", "category"),
     GROUP("groups", "group"),
     NETWORK("networks", "networks"),

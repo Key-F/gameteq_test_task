@@ -46,6 +46,7 @@ public class OfferListPage {
                 .findElement(deleteButton)
                 .click();
         confirmButton.click();
+        LOG.info(offer.getName() + " delete clicked");
     }
 
     public void editOffer(Offer offer) {
@@ -54,13 +55,11 @@ public class OfferListPage {
         driver.findElement(offerRow)
                 .findElement(editButton)
                 .click();
+        LOG.info(offer.getName() + " edit clicked");
     }
-
 
     public OfferListPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
-
 }

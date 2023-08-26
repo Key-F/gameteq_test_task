@@ -20,7 +20,6 @@ public class AddPage {
 
     private final AllureLogger LOG = new AllureLogger(LoggerFactory.getLogger(AddPage.class));
 
-
     private WebDriver driver;
     @FindBy(css = "input[name='name']")
     private WebElement nameField;
@@ -64,6 +63,16 @@ public class AddPage {
     @FindBy(css = "[class = 'mat-option ng-star-inserted'][role ='option']")
     private List<WebElement> groupOptions;
 
+    public Offer getOffer() {
+        return offer;
+    }
+
+    public void setOffer(Offer offer) {
+        this.offer = offer;
+    }
+
+    private Offer offer;
+
     public void addNewEntity(Entity entity) {
         if (entity.equals(Entity.OFFER)) {
             createNewOffer();
@@ -83,9 +92,9 @@ public class AddPage {
     }
 
     public void createNewOffer() {
-        Offer offer = new Offer();
-        nameField.sendKeys(offer.getName());
-        keyField.sendKeys(offer.getKey());
+        if (offer == null) offer = new Offer();
+        setName(offer.getName());
+        setKey(offer.getKey());
         networksField.click();
         networkOptions.get(0).click();
         Actions action = new Actions(driver);
@@ -93,8 +102,25 @@ public class AddPage {
         groupField.click();
         groupOptions.get(0).click();
         addSegmentButton.click();
-        saveButton.click();
+        save();
         LOG.info("New offer with name: \"" + offer.getName() + "\" was created");
+    }
+
+    public void setName(String name) {
+        nameField.clear();
+        nameField.sendKeys(name);
+        LOG.info("Name is set: " + name);
+    }
+
+    public void setKey(String key) {
+        nameField.clear();
+        keyField.sendKeys(key);
+        LOG.info("Key is set: " + key);
+    }
+
+    public void save() {
+        saveButton.click();
+        LOG.info("changes have been saved");
     }
 
     public AddPage(WebDriver driver) {

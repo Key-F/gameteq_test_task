@@ -57,6 +57,11 @@ public class MyWait {
         wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
+    public void invisible(By locator) {
+        LOG.info("Wait " + secondsToWait + " seconds, until element becomes invisible: " + locator);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+    }
+
     public void textIsPresent(WebElement element, String text) {
         LOG.info("Wait " + secondsToWait + " seconds, until text is present: " + element.toString());
         wait.until(ExpectedConditions.textToBePresentInElement(element, text));

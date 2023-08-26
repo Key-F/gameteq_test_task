@@ -26,8 +26,8 @@ public class DashBoardTest extends BaseTest {
         mainPage.menuClick();
     }
 
-    @ParameterizedTest(name = "#{index} - check for entity: \"{0}\"")
-    @DisplayName("check that entity count has changed correctly")
+    @ParameterizedTest(name = "#{index} - Check for entity: \"{0}\"")
+    @DisplayName("Check that entity count has changed correctly")
     @EnumSource(Entity.class)
     public void entityCountTest(Entity entityType) {
         int countBefore = dashBoardPage.getCount(entityType);

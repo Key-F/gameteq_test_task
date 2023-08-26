@@ -18,7 +18,7 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://test-task.gameteq.com/");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
     }
 
     @AfterEach

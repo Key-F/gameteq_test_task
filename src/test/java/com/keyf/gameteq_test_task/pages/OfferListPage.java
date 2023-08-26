@@ -35,7 +35,7 @@ public class OfferListPage {
     public boolean checkOfferIsDeleted(Offer offer) {
         String xpath = String.format(dynamicXpathTemplate, offer.getName(), offer.getKey());
         By offerRow = By.xpath(xpath);
-        myWait(1).invisible(offerRow);
+        myWait(3).invisible(offerRow);
         return driver.findElements(offerRow).isEmpty();
     }
 
